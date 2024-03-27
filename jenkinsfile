@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                git 'https://github.com/SelvaraniDG/Calculator.git'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                // Run unit tests
+                sh 'python -m unittest discover'
+            }
+        }
+        stage('Build Application') {
+            steps {
+                // Build the application (if necessary)
+                // For a simple Python script, it may not be applicable
+            }
+        }
+        stage('Deploy Application') {
+            steps {
+                // Deploy the application (if necessary)
+                // For a simple Python script, it may not be applicable
+            }
+        }
+    }
+}
