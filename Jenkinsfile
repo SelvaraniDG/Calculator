@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.12.1-alpine3.19'
-            args "-v ${WORKSPACE}:/app"
-        }
-    }
+    agent any 
+
     stages {
         stage('build') {
             steps {
@@ -13,7 +9,7 @@ pipeline {
         }
         stage('Run Python Tests') {
             steps {
-                // Checkout the code from the repository
+                // Checkout the code from the repo
                 git 'https://github.com/SelvaraniDG/Calculator.git'
                 
                 // Run unit tests
