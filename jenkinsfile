@@ -1,29 +1,9 @@
 pipeline {
-    agent any
-    
+    agent { docker { image 'python:3.12.1-alpine3.19' } }
     stages {
-        stage('Checkout') {
+        stage('build') {
             steps {
-                // Checkout the code from the repository
-                git 'https://github.com/SelvaraniDG/Calculator.git'
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                // Run unit tests
-                sh 'python -m unittest discover'
-            }
-        }
-        stage('Build Application') {
-            steps {
-                // Build the application (if necessary)
-                // For a simple Python script, it may not be applicable
-            }
-        }
-        stage('Deploy Application') {
-            steps {
-                // Deploy the application (if necessary)
-                // For a simple Python script, it may not be applicable
+                sh 'python --version'
             }
         }
     }
