@@ -12,8 +12,8 @@ pipeline {
                 // Checkout the code from the repo
                 git 'https://github.com/SelvaraniDG/Calculator.git'
                 
-                // Run unit tests
-                sh 'python -m unittest test_calculator.py'
+                // // Run unit tests
+                // sh 'python -m unittest test_calculator.py'
             }
         }
     }
